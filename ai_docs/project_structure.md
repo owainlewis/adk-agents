@@ -1,3 +1,4 @@
+```
 ├── agent-name
 │   ├── agent_name/
 │   │   ├── shared_libraries/               # Folder contains helper functions for tools
@@ -17,3 +18,4 @@
 │   ├── .env.example                        # Store agent specific env variables
 │   ├── pyproject.toml                      # Project configuration
 │   └── README.md                           # Provides an overview of the agent
+```
