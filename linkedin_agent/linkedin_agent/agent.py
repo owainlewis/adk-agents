@@ -1,17 +1,16 @@
-from google.adk.agents import Agent
+from google.adk.agents import LlmAgent
+from google.adk.tools.agent_tool import AgentTool
 from dotenv import load_dotenv
-from .tools import extract_brief
+
+from . import prompt
+from .sub_agents.brief_extractor.agent import extract_brief
 
 load_dotenv()
 
-PROMPT = """
-You are a LinkedIn content strategist with specialized tools for creating viral LinkedIn content.
-"""
-
-root_agent = Agent(
+root_agent = LlmAgent(
     name="linkedin_content_strategist",
     model="gemini-2.5-flash-preview-05-20",
-    instruction=PROMPT,
+    instruction=prompt.AGENT_PROMPT,
     description="LinkedIn content strategist with specialized tools for viral content creation",
-    tools=[extract_brief]
+    tools=[AgentTool(agent=extract_brief)]
 )
