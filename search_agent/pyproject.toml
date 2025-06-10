@@ -1,7 +1,7 @@
 [project]
-name = "search-agent"
+name = "adk-agents"
 version = "0.1.0"
-description = "Search AI agent built with Google ADK"
+description = "AI agents built with Google ADK"
 requires-python = ">=3.9"
 dependencies = [
     "google-adk",
